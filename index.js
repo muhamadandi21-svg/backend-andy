@@ -50,3 +50,29 @@ app.get('/api/gear', async (req, res) => {
 });
 
 module.exports = app;
+
+// 4. DELETE BOOKING (Menghapus booking berdasarkan ID)
+app.delete('/api/bookings/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    // Perintah SQL untuk menghapus data di Neon Database berdasarkan id
+    const result = await sql`DELETE FROM bookings WHERE id = ${id}`;
+    res.json({ success: true, message: "Booking berhasil dihapus", result });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Gagal menghapus data booking" });
+  }
+});
+
+// 5. DELETE EXPENSE (Menghapus pengeluaran berdasarkan ID)
+app.delete('/api/expenses/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await sql`DELETE FROM expenses WHERE id = ${id}`;
+    res.json({ success: true, message: "Expense berhasil dihapus", result });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Gagal menghapus data expense" });
+  }
+});
+
