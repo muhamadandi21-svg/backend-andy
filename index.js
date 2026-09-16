@@ -2,7 +2,7 @@ const { createClient } = require('@supabase/supabase-js');
 
 // 1. Inisialisasi Supabase (Gunakan URL dan Publishable/Anon key Anda)
 const SUPABASE_URL = 'https://zfjkdiawdxxqalifvcpcg.supabase.co';
-const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_dsc0Ks70hPlYgjnr...'; // Pastikan kunci lengkap Anda
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_dsC0kS70hpLYgjnrYL3uBw_wuYRpcCc'; // Pastikan kunci lengkap Anda
 const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 
 // 4. DELETE BOOKING (Menghapus booking berdasarkan ID menggunakan Supabase)
