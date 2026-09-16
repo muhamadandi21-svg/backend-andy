@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json()); // Agar bisa membaca format JSON dari frontend
 
 // 1. Inisialisasi Supabase
-const SUPABASE_URL = 'https://zfjkdiawdxxqalifvcpcg.supabase.co';
+const SUPABASE_URL = 'https://zfkdiawdxxqalifvcpcg.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_dsC0kS70hpLYgjnrYL3uBw_wuYRpcCc'; // Pastikan key lengkap Anda
 const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 
