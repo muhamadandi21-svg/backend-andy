@@ -22,3 +22,37 @@ header nav a:hover{color:#e6c27d!important}
 footer{background:#080808!important;color:#c7c4be!important}
 footer a{color:#f0ede7!important}
 footer .brand span{color:#e4bd73!important}
+
+
+/* Gallery and admin UI refinement — accessible, responsive, without changing existing data flow */
+.gallery article:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.gallery article{isolation:isolate}
+.gallery article>img,.gallery article>video{display:block}
+.gallery article div{z-index:1}
+.media-modal{z-index:1000;overflow:auto}
+.media-modal .media-modal-close{z-index:2;display:grid;place-items:center;line-height:1;box-shadow:0 8px 28px #0008}
+.media-modal img,.media-modal video{border-radius:3px;box-shadow:0 20px 70px #0008}
+@media(max-width:600px){.media-modal{padding:64px 12px 16px}.media-modal img,.media-modal video{max-width:100%;max-height:82vh}.media-modal .media-modal-close{top:10px;right:12px}}
+/* Admin layout */
+.wrap{max-width:1120px!important;margin:36px auto 64px!important}
+.wrap>h1{font-size:clamp(36px,5vw,58px);margin:0 0 8px}
+.wrap .panel{padding:clamp(16px,3vw,26px);border:1px solid #37342f;border-radius:8px;background:linear-gradient(145deg,#1b1b1a,#151515);box-shadow:0 12px 35px #0002}
+.wrap .panel h2{font-size:clamp(22px,3vw,30px);letter-spacing:-.025em;margin:0 0 18px}
+.wrap .form{gap:16px}
+.wrap .form label{color:#e0ddd6;font-size:12px;line-height:1.5}
+.wrap .form input,.wrap .form select,.wrap .form textarea{width:100%;min-height:42px;border-radius:4px;border-color:#4a4843;background:#101010;color:#f7f4ee;font:inherit;padding:11px 12px;outline:none}
+.wrap .form input:focus,.wrap .form select:focus,.wrap .form textarea:focus{border-color:#d4b477;box-shadow:0 0 0 3px #c5a46d24}
+.wrap .form input[type=file]{padding:8px}
+.wrap .form button{min-height:42px;cursor:pointer;border-radius:4px}
+.wrap .status{padding:8px 0;min-height:16px;color:#e4c58c}
+.wrap .item{gap:14px;padding:13px;border:1px solid #302f2b;border-radius:6px;background:#111;min-width:0}
+.wrap .item img,.wrap .item video{flex:0 0 76px;width:76px;height:64px;object-fit:cover;border-radius:3px;background:#080808}
+.wrap .item .meta{min-width:0;overflow-wrap:anywhere}
+.wrap .item .meta strong{color:#f5f1e8;font-size:13px;line-height:1.5}
+.wrap .item p{line-height:1.6;margin:5px 0;color:#b9b5ac}
+.wrap .item button{min-width:64px;min-height:36px;border-radius:4px;cursor:pointer;transition:background .2s,border-color .2s}
+.wrap .item button:hover{background:#2a2926;border-color:#c5a46d}
+.wrap .item button.danger:hover{background:#3b1c1c;border-color:#d77b7b!important}
+.wrap .item button:disabled{opacity:.55;cursor:wait}
+.wrap .note{line-height:1.7;color:#aaa79f}
+@media(max-width:600px){.wrap{margin:24px auto 44px!important;padding:0 14px!important}.wrap .item{display:grid;grid-template-columns:60px minmax(0,1fr) auto;gap:10px}.wrap .item img,.wrap .item video{width:60px;height:56px;min-width:0;grid-row:span 2}.wrap .item .meta{grid-column:2/-1}.wrap .item button{min-width:58px;padding:7px}.wrap .item button.danger{grid-column:3;grid-row:2}.wrap .item button:not(.danger){grid-column:2;grid-row:2;justify-self:start}}
